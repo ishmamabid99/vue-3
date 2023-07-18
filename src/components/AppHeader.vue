@@ -42,13 +42,12 @@ export default {
   margin-right:50px;
   color:#4682c0;
   cursor: pointer;
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 1.25rem;
 }
 .logo {
   margin-left: 30px;
 }
 .logo img{
-  width: 250px;
+  width: 10rem;
 }
 </style>
