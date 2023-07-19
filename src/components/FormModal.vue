@@ -1,21 +1,63 @@
 <template>
-  <div>
-    <h1>
-      {{ header }}
-    </h1>
-    <p>
-      {{ text }}
-    </p>
+  <div class="backdrop" @click="closeModal">
+    <div class="modal">
+      <div class="left-view">
+        <img class="image" :src="svg" />
+      </div>
+      <div class="right-view">
+        <slot name="title"></slot>
+        <slot></slot>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["header", "theme"],
+  props: ["svgImage"],
   data() {
-    return { title: "This is the modal" };
+    return {
+      svg: this.svgImage,
+    };
+  },
+  methods: {
+    closeModal() {
+      this.$emit("close");
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.image {
+  width: 100%;
+  height: 40rem;
+}
+.modal {
+  display: flex;
+  flex-direction: row;
+  width: 55rem;
+  height: 40rem;
+  margin: 10rem auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+.left-view {
+  width: 27.5rem;
+  flex-grow: 1;
+}
+.right-view {
+  width: 27.5rem;
+  flex-grow: 1;
+  flex-direction: row;
+}
+.backdrop {
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+</style>
