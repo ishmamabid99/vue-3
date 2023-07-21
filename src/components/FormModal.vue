@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop" @click="closeModal">
+  <div class="backdrop" @click.self="closeModal">
     <div class="modal">
       <div class="left-view">
         <img class="image" :src="svg" />
@@ -58,6 +58,7 @@ export default {
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
+  z-index: 10;
   height: 100%;
 }
 </style>

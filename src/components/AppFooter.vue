@@ -41,6 +41,7 @@ export default {};
   color: white;
   width: 100%;
   min-width: 100vw;
+  z-index: 9;
 }
 
 .footer-content {

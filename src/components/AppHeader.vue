@@ -19,27 +19,14 @@
       <template v-slot:title>
         <h1 class="login-title">Login</h1>
       </template>
-      <form class="form">
-        <input
-          maxlength="6"
-          class="form-input"
-          type="text"
-          placeholder="Please Enter Username"
-        />
-        <input
-          maxlength="6"
-          class="form-input"
-          type="password"
-          placeholder="Please Enter Password"
-        />
-        <button class="login-button" type="submit">LOGIN</button>
-      </form>
+      <LoginForm />
     </FormModal>
   </div>
 </template>
 
 <script>
 import FormModal from "./FormModal";
+import LoginForm from "./LoginForm";
 import logo from "../assets/logo.png";
 import image from "../assets/login-bank.svg";
 console.log(image);
@@ -57,7 +44,7 @@ export default {
       this.showModal = !this.showModal;
     },
   },
-  components: { FormModal },
+  components: { FormModal, LoginForm },
 };
 </script>
 
@@ -89,38 +76,8 @@ export default {
 .logo img {
   width: 10rem;
 }
-.form {
-  margin: 10rem 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .login-title {
   color: #4682c0;
   font-size: 2.5rem;
-}
-.form-input {
-  width: 80%;
-  padding: 0rem 2rem;
-  border: 1px solid #4682c0;
-  height: 3rem;
-  margin-top: 1.5rem;
-  border-radius: 10px;
-  border-color: #4682c0;
-}
-.login-button {
-  color: white;
-  font-size: medium;
-  background: #4682c0;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  height: 3rem;
-  width: 80%;
-  margin-top: 4rem;
-  cursor: pointer;
-}
-.login-button:active {
-  transform: translateY(4px);
 }
 </style>
